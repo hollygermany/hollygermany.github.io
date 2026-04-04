@@ -78,10 +78,40 @@
             p {
                 font-size: 1rem;
             }
+            nav {
+                background: #0f2c19;
+                border-bottom: 1px solid #1f472c;
+            }
+
+            .menu {
+                display: flex;
+                justify-content: center;
+                gap: 40px;
+                padding: 15px;
+                list-style: none;
+                margin: 0;
+            }
+
+            .menu a {
+                text-decoration: none;
+                color: var(--text-light);
+                font-weight: bold;
+            }
+
+            .menu a:hover {
+                color: var(--accent);
+            }
         }
     </style>
 </head>
 <body>
+
+<nav>
+    <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="countries.html">Countries Visited</a></li>
+    </ul>
+</nav>
 
 <header>
     <h1>Holly Kwan</h1>
