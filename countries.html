@@ -13,24 +13,37 @@
             --accent: #9fdfb1;
         }
 
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: "Georgia", serif;
+            font-family: Georgia, serif;
             margin: 0;
             background: var(--bg-dark-green);
             color: var(--text-light);
         }
 
+        /* Navigation */
         nav {
             background: #0f2c19;
             border-bottom: 1px solid #1f472c;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .menu {
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 40px;
-            padding: 15px;
             list-style: none;
+            margin: 0;
+            padding: 16px 20px;
+        }
+
+        .menu li {
             margin: 0;
         }
 
@@ -38,36 +51,54 @@
             text-decoration: none;
             color: var(--text-light);
             font-weight: bold;
+            transition: color 0.25s ease;
         }
 
-        .menu a:hover {
+        .menu a:hover,
+        .menu a:focus {
             color: var(--accent);
         }
 
+        /* Main Content */
         main {
             max-width: 900px;
             margin: 40px auto;
             background: var(--bg-panel);
             padding: 30px;
             border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.35);
         }
 
         h1 {
             text-align: center;
             color: var(--accent);
+            margin-top: 0;
         }
 
-        ul {
+        ol {
             columns: 2;
+            column-gap: 60px;
             font-size: 1.1rem;
+            padding-left: 35px;
         }
 
-        li {
-            margin: 6px 0;
+        ol li {
+            margin: 8px 0;
+            break-inside: avoid;
         }
 
         @media (max-width: 768px) {
-            ul {
+            .menu {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            main {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            ol {
                 columns: 1;
             }
         }
@@ -75,79 +106,75 @@
 </head>
 <body>
 
-<nav>
-    <ul class="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="countries.html">Countries Visited</a></li>
-    </ul>
-</nav>
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="countries.html">Countries Visited</a></li>
+        </ul>
+    </nav>
 
-<main>
-    <h1>Countries I Have Visited</h1>
+    <main>
+        <h1>Countries I Have Visited</h1>
 
-    <ul>
-        <li>United States</li>
-        <li>Hong Kong</li>
-        <li>Macau</li>
-        <li>China</li>
-        <li>Taiwan</li>
+        <ol>
+            <li>United States</li>
+            <li>Hong Kong</li>
+            <li>Macau</li>
+            <li>China</li>
+            <li>Taiwan</li>
+            <li>Canada</li>
+            <li>Mexico</li>
+            <li>The Netherlands</li>
+            <li>Germany</li>
+            <li>Japan</li>
+            <li>Vietnam</li>
+            <li>Spain</li>
+            <li>Andorra</li>
+            <li>France</li>
+            <li>Monaco</li>
+            <li>Italy</li>
+            <li>Austria</li>
+            <li>Poland</li>
+            <li>Norway</li>
+            <li>England</li>
+            <li>Portugal</li>
+            <li>Ecuador</li>
+            <li>Honduras</li>
+            <li>Belize</li>
+            <li>Belgium</li>
+            <li>Wales</li>
+            <li>Albania</li>
+            <li>North Macedonia</li>
+            <li>Montenegro</li>
+            <li>Serbia</li>
+            <li>Scotland</li>
+            <li>Ireland</li>
+            <li>Luxembourg</li>
+            <li>Switzerland</li>
+            <li>Liechtenstein</li>
+            <li>Czech Republic</li>
+            <li>Slovakia</li>
+            <li>Hungary</li>
+            <li>Croatia</li>
+            <li>Slovenia</li>
+            <li>Romania</li>
+            <li>Qatar</li>
+            <li>Moldova</li>
+            <li>Bulgaria</li>
+            <li>Greece</li>
+            <li>Vatican City</li>
+            <li>Sweden</li>
+            <li>Denmark</li>
+            <li>Fiji</li>
+            <li>New Zealand</li>
+            <li>Australia</li>
+            <li>Singapore</li>
+            <li>Bahrain</li>
+            <li>Azerbaijan</li>
+            <li>Georgia</li>
+        </ol>
 
-        <li>Canada</li>
-        <li>Mexico</li>
-        <li>The Netherlands</li>
-        <li>Germany</li>
-        <li>Japan</li>
-
-        <li>Vietnam</li>
-        <li>Spain</li>
-        <li>Andorra</li>
-        <li>France</li>
-        <li>Monaco</li>
-
-        <li>Italy</li>
-        <li>Austria</li>
-        <li>Poland</li>
-        <li>Norway</li>
-        <li>England</li>
-
-        <li>Portugal</li>
-        <li>Ecuador</li>
-        <li>Honduras</li>
-        <li>Belize</li>
-        <li>Belgium</li>
-
-        <li>Wales</li>
-        <li>Albania</li>
-        <li>North Macedonia</li>
-        <li>Montenegro</li>
-        <li>Serbia</li>
-
-        <li>Scotland</li>
-        <li>Ireland</li>
-        <li>Luxembourg</li>
-        <li>Switzerland</li>
-        <li>Liechtenstein</li>
-
-        <li>Czech Republic</li>
-        <li>Slovakia</li>
-        <li>Hungary</li>
-        <li>Croatia</li>
-        <li>Slovenia</li>
-
-        <li>Romania</li>
-        <li>Qatar</li>
-        <li>Moldova</li>
-        <li>Bulgaria</li>
-        <li>Greece</li>
-
-        <li>Vatican City</li>
-        <li>Sweden</li>
-        <li>Denmark</li>
-
-        <li>Fiji</li>
-        <li>New Zealand</li>
-    </ul>
-</main>
+    </main>
 
 </body>
 </html>
